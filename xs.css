@@ -1,0 +1,22 @@
+.ulxs{
+    list-style: none;
+    padding: 0;
+}
+
+.ulxs li{
+    float: left;
+    margin-left: 28px;
+    text-align: center;
+}
+
+.ulxs img{
+    weight: 200px;
+    height: 200px;
+    border-radius: 10px;
+
+}
+
+body{
+    width: 1510px;
+    margin: 0 auto;
+}

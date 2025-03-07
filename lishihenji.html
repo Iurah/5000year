@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>五千载历史的痕迹</title>
+    <!-- 样式初始化 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .header,.nav,.container,.footer{
+            /* 这四个都要左浮动 */
+            float: left;
+            /* 让他们满浏览器 */
+            width: 100%;
+            /* 内边距会影响整个盒子大小，我进行如下处理让他避免受到影响 */
+            box-sizing: border-box;
+        }
+
+        .header{
+            background: rgb(94, 96, 96);
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        .header h1{
+            font-size: 50px;
+            font-family: 楷体;
+        }
+
+        .nav{
+            background: #333;
+        }
+
+        .nav a{
+            color: #fff;
+            padding: 10px 20px;
+            display: inline-block; /* 让链接以块的形式显示 */
+        }
+
+        .nav a:hover{
+            background: #bbb;
+            color: #000;
+        }
+
+
+        /* 我让左右两边都固定宽度200 */
+        .lside{
+            width: 200px;
+            float: left;
+        }
+        
+        .ys{
+            width: 200px;
+            list-style: none;
+            padding: 0;
+            background: #dfdede;
+            border-radius: 12px;
+            overflow: hidden;
+            color: #515050;
+        }
+
+        .ys li{
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .ys li:hover{
+            background: #ccc;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .rside{
+            width: 200px;
+            float: right;
+        }
+
+        /* 看起来还是有问题，所以中间栏要加上左右边距 */
+        .content{
+            margin: 0px 205px;
+        }
+
+
+        /* 但是还是太接近边框了 */
+        .lside,.rside,.content{
+            padding: 5px;
+            /* 下面这一步也是去掉内边距影响 */
+            box-sizing: border-box;
+        }
+
+        .footer{
+            padding: 10px;
+            background: #ccc;
+            text-align: center;
+        }
+
+
+        span {
+         display: block;
+       }
+
+       /* 我需要一个flex容器 */
+       .content{
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+
+       
+
+       }
+
+       .content div{
+        background: #fff;
+        border: 2px solid #fff;
+       }
+
+
+    </style>
+    <link rel="stylesheet" href="xs.css">
+ </head>
+<body>
+    <div class="main">
+        <div class="header"> 
+            <h1 style="color: #fff; font-family: 华文彩云; float: right;">历史的痕迹</p></h1>
+            <img src="hsd.png" alt=""; style="float: left; position: absolute; left: 10px; top: 0%; transform: translateY(10%);">
+        </div>
+           
+        <div class="nav">
+            <a href="https://tv.cctv.com/" target="_self">中国中央电视台</a>
+            <a href="https://www.dpm.org.cn/" target="_self">数字博物院</a>
+            <a href="https://www.gushicimingju.com/shiren/" target="_self">古代诗人</a>
+            <a href="https://www.gushicimingju.com/gushi/" target="_self">唐诗宋词</a>
+            <a href="https://www.gushicimingju.com/shiju/" target="_self">诗句名言</a>
+            <a href="https://www.gushicimingju.com/novel/" target="_self">古文典籍</a>
+            <a href="https://www.chinawriter.com.cn/" target="_self">现代作家</a>
+            <a href="https://www.nlc.cn/" target="_self">当代小说</a>
+            <a href="https://www.zhitiao.cn/" target="_self">作文精选</a>
+            <a href="http://www.dzkbw.com/" target="_self">教材课本</a>
+            <a href="https://www.cflac.org.cn/ys/ysxj/" target="_self">戏剧文艺</a>
+            <a href="https://www.doubao.com/" target="_self">在线AI创作</a>
+            <a href="https://www.cnki.net/" target="_self">更多学术</a>
+        </div>
+
+        <div class="container">
+            <!-- 主体我们要放入三个盒子，分别在左右中,要注意我用margin进行三栏布局
+            中间的栏是自适应的，所以中间的栏放在第三个。 
+            -->
+             <div class="lside">
+                <ul class="ys"><h3 style="text-align: center; font-family: 方正舒体;">会当临绝顶</h3>
+                <h3 style="text-align: center; font-family: 方正舒体;">一览众山小</h3>
+                   <hr>
+                   <hr>
+                   <p style="text-align: center; font-family: 楷体;">按首字母排序</p>
+                   <hr>
+                   <hr>
+                   <ul class="ys">
+                     <li style="font-family: 华文琥珀;"><a href="https://www.ah.gov.cn/hfwy/index.html" target="_self"  style="color: black;">安徽省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.beijing.gov.cn/renwen/" target="_self"  style="color: black;">北京市</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.cq.gov.cn/zjcq/" target="_self"  style="color: black;">重庆市</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.fujian.gov.cn/zjfj/" target="_self"  style="color: black;">福建省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.gansu.gov.cn/gsszf/c100269/rwly.shtml" target="_self"  style="color: black;">甘肃省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.gd.gov.cn/zjgd/index.html" target="_self"  style="color: black;">广东省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.gxzf.gov.cn/mlgxi/" target="_self"  style="color: black;">广西壮族自治区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.guizhou.gov.cn/dcgz/" target="_self"  style="color: black;">贵州省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.hainan.gov.cn/hainan/shengq/sq.shtml?ddtab=true" target="_self"  style="color: black;">海南省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.hebei.gov.cn/columns/be91bd5c-7b76-4252-bc33-d48c85159858/index.html" target="_self"  style="color: black;">河北省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.henan.gov.cn/jchn/" target="_self"  style="color: black;">河南省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.hubei.gov.cn/jmct/" target="_self"  style="color: black;">湖北省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.hunan.gov.cn/hnszf/jxxx/jxxx.html" target="_self"  style="color: black;">湖南省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.hlj.gov.cn/hlj/c108475/zjhlj.shtml" target="_self"  style="color: black;">黑龙江省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://whhlyt.jl.gov.cn/ggfw/" target="_self"  style="color: black;">吉林省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.jiangsu.gov.cn/col/col31358/index.html" target="_self"  style="color: black;">江苏省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.jiangxi.gov.cn/col/col387/index.html" target="_self"  style="color: black;">江西省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.ln.gov.cn/web/zjln/index.shtml" target="_self"  style="color: black;">辽宁省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.nmg.gov.cn/asnmg/" target="_self"  style="color: black;">内蒙古自治区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.nx.gov.cn/ssjn/" target="_self"  style="color: black;">宁夏回族自治区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.qinghai.gov.cn/dmqh/index.html" target="_self"  style="color: black;">青海省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.shandong.gov.cn/col/col94094/index.html" target="_self"  style="color: black;">山东省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.shaanxi.gov.cn/sq/" target="_self"  style="color: black;">陕西省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.shanxi.gov.cn/index_10603.shtml" target="_self"  style="color: black;">山西省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.shanghai.gov.cn/nw2318/index.html" target="_self"  style="color: black;">上海市</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.sc.gov.cn/10462/c106773/zjsc.shtml" target="_self"  style="color: black;">四川省</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.travel.taipei/zh-cn" target="_self"  style="color: black;">台湾</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.tj.gov.cn/sq/" target="_self"  style="color: black;">天津市</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.discoverhongkong.cn/index.html" target="_self"  style="color: black;">香港特别行政区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.xinjiang.gov.cn/xinjiang/dmxj/dmxj.shtml" target="_self"  style="color: black;">新疆维吾尔自治区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.lasa.gov.cn/lasa/yxls/yx.shtml" target="_self"  style="color: black;">西藏自治区</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.zj.gov.cn/col/col1544731/index.html" target="_self"  style="color: black;">浙江省</a></li>
+                     <hr>
+                   </ul>
+             </div>
+
+             <div class="rside">
+                <ul class="ys"><h3 style="text-align: center; font-family: 方正舒体;">人间烟火气</h3>
+                <h3 style="text-align: center; font-family: 方正舒体;">最抚凡人心</h3>
+                  <hr>
+                  <hr>
+                  <p style="text-align: center; font-family: 楷体;">今日热搜</p>
+                  <hr>
+                  <hr>
+                   <ul class="ys">
+                     <li style="font-family: 华文琥珀;"><a href="https://weibo.com/newlogin?tabtype=search&gid=&openLoginLayer=0&url=" target="_self"  style="color: black;">微博</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.bilibili.com/blackboard/activity-trending-topic.html" target="_self"  style="color: black;">哔哩哔哩</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://top.baidu.com/board?tab=realtime" target="_self"  style="color: black;">百度</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://tophub.today/n/K7GdaMgdQy" target="_self"  style="color: black;">抖音</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://vt.quark.cn/blm/hot-board-599/tab" target="_self"  style="color: black;">夸克</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://tophub.today/n/L4MdA5ldxD" target="_self"  style="color: black;">小红书</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.people.com.cn/" target="_self"  style="color: black;">人民日报</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.chinadaily.com.cn/" target="_self"  style="color: black;">ChinaDaily</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://rebang.today/?tab=zhihu" target="_self"  style="color: black;">知乎</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://m.hupu.com/hot" target="_self"  style="color: black;">虎扑</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.izuiyou.com/" target="_self"  style="color: black;">最右</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://news.qq.com/" target="_self"  style="color: black;">腾讯新闻</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://news.163.com/" target="_self"  style="color: black;">网易新闻</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://news.so.com/hotnews" target="_self"  style="color: black;">360热搜</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.msn.cn/zh-cn" target="_self"  style="color: black;">MSN</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.toutiao.com/?wid=1733782099410" target="_self"  style="color: black;">今日头条</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://news.cctv.com/" target="_self"  style="color: black;">央视新闻</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.cls.cn/" target="_self"  style="color: black;">财联社</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.ifeng.com/" target="_self"  style="color: black;">凤凰新闻</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.people.com.cn/" target="_self"  style="color: black;">人民网</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.gov.cn/" target="_self"  style="color: black;">国务院</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.xinhuanet.com/" target="_self"  style="color: black;">新华社</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.thepaper.cn/" target="_self"  style="color: black;">澎湃新闻</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.huanqiu.com/" target="_self"  style="color: black;">环球时报</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.csdn.net/" target="_self"  style="color: black;">CSDN</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://tophub.today/n/MZd7PrPerO" target="_self"  style="color: black;">快手</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.gmw.cn/" target="_self"  style="color: black;">光明日报</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="http://www.81.cn/" target="_self"  style="color: black;">解放军报</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.guancha.cn/" target="_self"  style="color: black;">观察者网</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://sports.sina.com.cn/" target="_self"  style="color: black;">新浪体育</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://sports.qq.com/" target="_self"  style="color: black;">腾讯体育</a></li>
+                     <hr>
+                     <li style="font-family: 华文琥珀;"><a href="https://www.cs.com.cn/" target="_self"  style="color: black;">中国证券报</a></li>
+                     <hr>
+                </p>
+             </div>
+
+             <div class="content">
+                <div class="flex1">
+                    <h1><a href="https://www.dpm.org.cn/explore/collections.html" style="color: black;">&nbsp;&nbsp;&nbsp;传统艺术>MORE</a></h1>
+                <ul class="ulxs">
+                    <li><a href="https://www.dpm.org.cn/collection/paints.html"><img src="tupian/img绘画.jpg" alt=""></a><br>绘画</li>
+                    <li><a href="https://www.dpm.org.cn/collection/handwritings.html"><img src="tupian/img书法.jpg" alt=""></a><br>书法</li>
+                    <li><a href="https://www.dpm.org.cn/collection/religions.html"><img src="tupian/img织绣.jpg" alt=""></a><br>织绣</li>
+                    <li><a href="https://www.dpm.org.cn/explore/buildings.html"><img src="tupian/img建筑.jpg" alt="" style="width:500px;"></a><br>建筑</li>
+                    <li><a href="https://www.dpm.org.cn/collection/sculptures.html"><img src="tupian/img雕塑.jpg" alt="" style="width:500px;"></a><br>雕塑</li>
+                    <li><a href="https://www.dpm.org.cn/collection/musics.html"><img src="tupian/img陶瓷.jpg" alt="" style="width:500px;"></a><br>陶瓷</li>
+                <div class="flex1">
+                    <h1><a href="https://www.vcg.com/creative-image/zhongguo/?orientType%5B0%5D=1" style="color: black;">&nbsp;&nbsp;&nbsp;国风壁纸>MORE</a></h1>
+                <ul class="ulxs">
+                    <li><a href="https://www.ysjf.com/materialLibrary"><img src="tupian/img风景.jpg" alt="" style="width:500px;"></a><br>风景</li>
+                    <li><a href="https://wallspic.com/cn/album/hangkong/popular/for_desktop"><img src="tupian/img科技.jpg" alt="" style="width:500px;"></a><br>科技</li>
+                    <li><a href="https://www.duitang.com/category/?cat=travel"><img src="tupian/img人文.jpg" alt="" style="width:500px;"></a><br>人文</li>
+                    <li><a href="https://www.vcg.com/creative-image/zhiyubizhi/"><img src="tupian/img治愈.jpg" alt="" style="width:500px;"></a><br>治愈</li>
+                    <li><a href="https://www.vcg.com/creative-image/dongwubizhi/"><img src="tupian/img动物.jpg" alt="" style="width:500px;"></a><br>动物</li>
+                    <li><a href="https://www.baidu.com"><img src="tupian/img地标.jpg" alt="" style="width:500px;"></a><br>世界</li>
+                </ul></div>
+                <div class="flex1">
+                    <h1><a href="https://www.bilibili.com/documentary/?spm_id_from=333.1007.0.0" style="color: black;">&nbsp;&nbsp;&nbsp;故事影片>MORE</a></h1>
+                <ul class="ulxs">
+                    <li><a href="https://www.bilibili.com/documentary/index/?from_spmid=666.9.function.1#st=3&style_id=10033&producer_id=-1&release_date=-1&season_status=-1&order=2&sort=0&page=1"><img src="tupian/img历史.jpg" alt="" style="width:500px;"></a><br>历史</li>
+                    <li><a href="https://www.bilibili.com/documentary/index/?from_spmid=666.9.function.1#st=3&style_id=10074&producer_id=-1&release_date=-1&season_status=-1&order=2&sort=0&page=1"><img src="tupian/img战争.jpg" alt=""style="width:500px;"></a><br>战争</li>
+                    <li><a href="https://search.cctv.com/search.php?qtext=%E7%9B%B8%E5%A3%B0&type=video"><img src="tupian/img相声.jpg" alt=""style="width:500px;"></a><br>相声</li>
+                    <li><a href="https://tv.cctv.com/2020/06/15/VIDAy8nJPKYZYaXgv4Tvdnn5200615.shtml"><img src="tupian/img传记.jpg" alt=""style="width:500px;"></a><br>人物传记</li>
+                    <li><a href="https://v.qq.com/x/search/?q=%E6%96%87%E8%89%BA&queryFrom=0"><img src="tupian/img文艺.jpg" alt=""style="width:500px;"></a><br>文艺</li>
+                    <li><a href="https://v.qq.com/channel/movie/list?filter_params=itype%3D12&page_id=channel_list_second_page&channel_id=100173"><img src="tupian/img科幻.jpg" alt=""style="width:500px;"></a><br>科幻</li>
+                </ul></div>
+        </div>
+        <div class="footer">
+            <p>版权所有 &copy; 2024级信息安全 </p>
+            <p>邮箱：15650699670@163.com</p>
+        </div>
+    </div>
+</body>
+</html>

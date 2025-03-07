@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封面.点击任意处进入</title>
+
+    <style>
+        .main{
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main div{
+            background: #3b3b3b;
+        }
+
+        .main div video{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .flex1{
+            flex: 4;
+        }
+
+        .flex2{
+            flex: 1;
+        
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="flex2">
+            <a href="lishihenji.html"><h1 style="text-align:center; font-family: 华文彩云; color: #fff;">历史的痕迹</h1></a>
+        </div>
+        <div class="flex1">
+            <a href="lishihenji.html"><video src="fengmian.mp4" autoplay loop muted></video></a>
+        </div>
+    </div>
+</body>
+</html>
