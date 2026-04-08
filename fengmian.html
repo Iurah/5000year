@@ -1,48 +1,210 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>封面.点击任意处进入</title>
-
+    <title>历史的痕迹 - 中华文脉</title>
     <style>
-        .main{
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background: #0a0a0a;
+        }
+
+        .cover {
             width: 100%;
             height: 100%;
-            background: #ccc;
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.7) 0%, rgba(30, 25, 15, 0.8) 100%);
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
         }
 
-        .main div{
-            background: #3b3b3b;
+        .cover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
         }
 
-        .main div video{
+        .launch-box {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1.2s ease-out;
+            padding: 60px 80px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .logo {
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #d4af37 0%, #f4e4bc 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 16px;
+            letter-spacing: 8px;
+            text-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+        }
+
+        .slogan {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 48px;
+            font-weight: 500;
+            opacity: 0.9;
+            letter-spacing: 4px;
+        }
+
+        .enter-btn {
+            display: inline-block;
+            padding: 18px 56px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #1a1a1a;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        .enter-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
         }
 
-        .flex1{
-            flex: 4;
+        .enter-btn:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.4);
         }
 
-        .flex2{
-            flex: 1;
-        
+        .enter-btn:hover::before {
+            left: 100%;
+        }
+
+        .tip {
+            position: absolute;
+            bottom: 40px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            opacity: 0.8;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-4px); }
+        }
+
+        .corner-decoration {
+            position: absolute; 
+            width: 120px; height: 120px;
+            opacity: 0.15;
+        }
+
+        .corner-tl { top: 40px; left: 40px; border-top: 3px solid #d4af37; border-left: 3px solid #d4af37; }
+        .corner-br { bottom: 40px; right: 40px; border-bottom: 3px solid #d4af37; border-right: 3px solid #d4af37; }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="main">
-        <div class="flex2">
-            <a href="lishihenji.html"><h1 style="text-align:center; font-family: 华文彩云; color: #fff;">历史的痕迹</h1></a>
+    <div class="cover" onclick="window.location.href='lishihenji.html'">
+        <div class="particles" id="particles"></div>
+        <div class="corner-decoration corner-tl"></div>
+        <div class="corner-decoration corner-br"></div>
+        <div class="launch-box">
+            <h1 class="logo">历史的痕迹</h1>
+            <p class="slogan">承千年文脉 · 品华夏风华</p>
+            <a href="lishihenji.html" class="enter-btn">进入官网</a>
         </div>
-        <div class="flex1">
-            <a href="lishihenji.html"><video src="fengmian.mp4" autoplay loop muted></video></a>
-        </div>
+        <p class="tip">点击任意位置也可进入</p>
     </div>
+
+    <script>
+        function createParticles(count = 50) {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+                particle.style.width = (2 + Math.random() * 4) + 'px';
+                particle.style.height = particle.style.width;
+                container.appendChild(particle);
+            }
+        }
+
+        createParticles(50);
+    </script>
 </body>
 </html>
